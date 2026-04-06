@@ -89,9 +89,9 @@ This product bridges the gap between traditional embedded autopilots and the dem
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                     POWER SUBSYSTEM                             │
-│  PW1 (5V/4A) ──┐                                               │
-│  PW2 (5V/4A) ──┤─── LTC4417 Priority Selector ─── VDD_5V_IN   │
-│  PW3 (12V/3A)──┘         (Triple Redundant)                    │
+│  PW1 (5V/4A) ──┐                                                │
+│  PW2 (5V/4A) ──┤─── LTC4417 Priority Selector ─── VDD_5V_IN     │
+│  PW3 (12V/3A)──┘         (Triple Redundant)                     │
 │  USB 3.0 (5V/4A) ─────────────────────────────────────────────  │
 └──────────────────────────────┬──────────────────────────────────┘
                                │
@@ -101,17 +101,17 @@ This product bridges the gap between traditional embedded autopilots and the dem
 │  FMUv6 MAIN     │  │  CM5 BOARD       │  │  4G/5G MODULE      │
 │  MODULE         │  │  (Raspberry Pi   │  │  (M.2 PCIe/USB)    │
 │                 │  │   CM5)           │  │                    │
-│ ┌─────────────┐ │  │ ┌─────────────┐ │  │ ┌────────────────┐ │
-│ │ Main MCU    │ │  │ │ BCM2712     │ │  │ │ 4G LTE / 5G NR │ │
-│ │ (STM32H7xx) │◄├──►│ Quad-Core   │ │  │ │ Modem          │ │
-│ └─────────────┘ │  │ ARM Cortex-A7│ │  │ └────────────────┘ │
-│ ┌─────────────┐ │  │ └─────────────┘ │  │        │           │
-│ │ IO MCU      │ │  │ ┌─────────────┐ │  │   PCIe / USB       │
-│ │ STM32F103   │ │  │ │ HDMI Out    │ │  └────────┬───────────┘
-│ └─────────────┘ │  │ │ Dual Camera │ │           │
-│ ┌─────────────┐ │  │ │ USB 3.0     │ │◄──────────┘
-│ │ LAN8742A    │ │  │ └─────────────┘ │
-│ │ ETH PHY     │◄├──►└────────────────┘
+│ ┌─────────────┐ │  │ ┌─────────────┐  │  │ ┌────────────────┐ │
+│ │ Main MCU    │ │  │ │ BCM2712     │  │  │ │ 4G LTE / 5G NR │ │
+│ │ (STM32H7xx) │◄├─►│ │ Quad-Core   │  │  │ │ Modem          │ │
+│ └─────────────┘ │  │ │ARM Cortex-A7│  │  │ └────────────────┘ │
+│ ┌─────────────┐ │  │ └─────────────┘  │  │        │           │
+│ │ IO MCU      │ │  │ ┌─────────────┐  │  │   PCIe / USB       │
+│ │ STM32F103   │ │  │ │ HDMI Out    │  │  └────────┬───────────┘
+│ └─────────────┘ │  │ │ Dual Camera │  │           │
+│ ┌─────────────┐ │  │ │ USB 3.0     │  │◄──────────┘
+│ │ LAN8742A    │ │  │ └─────────────┘  │
+│ │ ETH PHY     │◄├─►└──────────────────┘
 │ └─────────────┘ │
 │ ┌─────────────┐ │
 │ │ 24LC64      │ │
@@ -336,8 +336,8 @@ All Ethernet connections use **DLW43MH201XK2L common-mode chokes** for EMI filte
                     │  8× AUX PWM      │
                     └────────┬─────────┘
                              │ USART6
-              ┌──────────────▼──────────────────────┐
-              │          FMUv6 MAIN MODULE           │
+              ┌──────────────▼─────────────────────┐
+              │          FMUv6 MAIN MODULE         │
               │  ┌──────┐  ┌──────────┐  ┌───────┐ │
               │  │EEPROM│  │ LAN8742A │  │24LC64 │ │
               │  │I2C3  │  │ ETH PHY  │  │EEPROM │ │
