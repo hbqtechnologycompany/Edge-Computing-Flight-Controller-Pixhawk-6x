@@ -3,43 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edge Computing Flight Controller Pixhawk 6X Wiki | Wiki Song Ngữ</title>
+<title>Edge Computing Flight Controller Pixhawk 6X Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box}
+:root{--bg:#f3f1eb;--ink:#1d242c;--muted:#5f6a75;--panel:#fffdfa;--panel-2:#f7f2ea;--panel-3:#eef3f7;--line:#d9d2c6;--line-strong:#b7aa96;--brand:#9f4f23;--brand-deep:#6f3415;--brand-soft:#f5e4d8;--signal:#2e6b72;--signal-soft:#ddecef;--accent:#d8b24c;--shadow:0 14px 34px rgba(41,39,34,.08)}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:'IBM Plex Sans',sans-serif;background:#f6f8fb;color:#18202a;line-height:1.6}
-:root{--surface:#fff;--surface-2:#f0f4f9;--border:#d9e1ea;--muted:#5b6776;--brand:#005fb8;--brand-soft:#eaf3ff;--accent:#0f8f67;--warn:#c76b00;--shadow:0 10px 30px rgba(16,34,53,.08)}
-a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-.layout{display:grid;grid-template-columns:320px minmax(0,1fr);min-height:100vh}
-.sidebar{position:sticky;top:0;height:100vh;overflow:auto;background:#0f1722;color:#e8eef7;border-right:1px solid #1d2836;padding:24px 20px 32px}
-.brand{display:block;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:18px}
-.brand small{display:block;font-size:.78rem;color:#90a0b5;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
-.brand strong{display:block;font-size:1.2rem;line-height:1.25}
-.brand span{display:block;margin-top:8px;color:#b6c4d7;font-size:.92rem}
-.nav-group{margin-bottom:18px}.nav-label{font-size:.75rem;color:#8ea1b8;text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px}.nav-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}.nav-list a{display:block;padding:9px 10px;border-radius:8px;color:#dbe6f5;font-size:.95rem}.nav-list a:hover,.nav-list a.active{background:#182334;text-decoration:none}
-.sidebar-card{margin-top:22px;padding:14px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:rgba(255,255,255,.03)}.sidebar-card h4{margin:0 0 8px;font-size:.9rem}.sidebar-card p{margin:0;color:#aebed2;font-size:.86rem}
-.content{padding:28px 32px 56px}.toolbar{display:flex;justify-content:flex-end;align-items:center;margin-bottom:14px}.lang-switch{display:inline-flex;background:#fff;border:1px solid var(--border);border-radius:999px;padding:4px;box-shadow:var(--shadow)}.lang-btn{border:none;background:transparent;color:#405064;padding:8px 14px;border-radius:999px;font:600 .88rem 'IBM Plex Sans',sans-serif;cursor:pointer}.lang-btn.active{background:var(--brand);color:#fff}
-.hero{background:linear-gradient(135deg,#ffffff 0%,#eef5ff 100%);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:20px;padding:28px 30px;margin-bottom:26px}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);color:var(--brand);border:1px solid #c9defd;border-radius:999px;padding:6px 12px;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em}.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-h1{font-size:2.5rem;line-height:1.05;margin:16px 0 12px;letter-spacing:-.03em}.lead{max-width:980px;font-size:1.04rem;color:#344152;margin:0 0 18px}.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px}.stat strong{display:block;font-size:1.45rem;line-height:1.1;margin-bottom:4px}.stat span{font-size:.88rem;color:var(--muted)}
-.article{max-width:1280px}.section{margin-bottom:20px;background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.section-head{padding:22px 24px 8px}.section-head h2{margin:0;font-size:1.65rem;letter-spacing:-.02em}.section-head p{margin:8px 0 0;color:var(--muted)}.section-body{padding:0 24px 24px}
-.intro-grid,.dual-grid,.triple-grid,.quad-grid{display:grid;gap:16px}.intro-grid{grid-template-columns:1.2fr .8fr}.dual-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.triple-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.quad-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-.card{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:18px}.card h3{margin:0 0 10px}.card p:last-child,.card ul:last-child{margin-bottom:0}
-.list{margin:0;padding-left:18px}.list li+li{margin-top:6px}
-.kv{width:100%;border-collapse:collapse;font-size:.95rem}.kv th,.kv td{padding:11px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}.kv th{width:220px;color:#344152;background:#fafcff;font-weight:600}.kv tr:last-child th,.kv tr:last-child td{border-bottom:none}
-.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:14px;background:#fff}table.matrix{width:100%;border-collapse:collapse;min-width:760px}table.matrix th,table.matrix td{padding:11px 12px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);font-size:.92rem;text-align:left;vertical-align:top}table.matrix th:last-child,table.matrix td:last-child{border-right:none}table.matrix thead th{background:#eff4fa;font-weight:700}table.matrix tbody tr:last-child td{border-bottom:none}
-.chip-row{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid #cbd8e6;background:#fff;font-size:.82rem;color:#334154}
-.note{padding:14px 16px;border-radius:12px;border:1px solid #c9defd;background:var(--brand-soft);color:#21456b}.warn{padding:14px 16px;border-radius:12px;border:1px solid #f2d09f;background:#fff6e8;color:#7d5314}
-.diagram{background:#0f1722;color:#d7e4f3;border-radius:16px;padding:18px;overflow:auto;border:1px solid #1f2d3d;font-family:'IBM Plex Mono',monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap}
-.faq details{border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:#fff}.faq details+details{margin-top:12px}.faq summary{cursor:pointer;font-weight:600}.faq p{margin:12px 0 0;color:#425062}.footer{margin-top:30px;color:#6c7888;font-size:.9rem;text-align:center}
-.lang-vi{display:none}body[data-lang='vi'] .lang-en{display:none}body[data-lang='vi'] .lang-vi{display:inline}body[data-lang='en'] .lang-en{display:inline}body[data-lang='en'] .lang-vi{display:none}
-body[data-lang='vi'] .lang-vi.block{display:block}body[data-lang='vi'] .lang-en.block{display:none}body[data-lang='en'] .lang-en.block{display:block}body[data-lang='en'] .lang-vi.block{display:none}
-body[data-lang='vi'] .lang-vi.flex{display:flex}body[data-lang='vi'] .lang-en.flex{display:none}body[data-lang='en'] .lang-en.flex{display:flex}body[data-lang='en'] .lang-vi.flex{display:none}
-body[data-lang='vi'] .lang-vi.inline-flex{display:inline-flex}body[data-lang='vi'] .lang-en.inline-flex{display:none}body[data-lang='en'] .lang-en.inline-flex{display:inline-flex}body[data-lang='en'] .lang-vi.inline-flex{display:none}
-@media (max-width:1120px){.layout{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.content{padding:22px}.intro-grid,.dual-grid,.triple-grid,.quad-grid,.hero-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:720px){.content{padding:16px}.hero{padding:20px}h1{font-size:2rem}.intro-grid,.dual-grid,.triple-grid,.quad-grid,.hero-grid{grid-template-columns:1fr}.section-head,.section-body{padding-left:18px;padding-right:18px}.toolbar{justify-content:flex-start}}
+body{margin:0;font-family:'IBM Plex Sans',sans-serif;background:radial-gradient(circle at top left,#fbf8f2 0,#f3f1eb 42%,#ece9e1 100%);color:var(--ink);line-height:1.65}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:none}
+button{font:inherit}
+.layout{display:grid;grid-template-columns:312px minmax(0,1fr);min-height:100vh}
+.sidebar{position:sticky;top:0;height:100vh;overflow:auto;padding:26px 20px 36px;background:linear-gradient(180deg,#1a2128 0,#131920 100%);color:#edf2f7;border-right:1px solid rgba(255,255,255,.08)}
+.brand{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.brand small{display:block;margin-bottom:8px;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:#96a8ba}
+.brand strong{display:block;font-size:1.18rem;line-height:1.25}
+.brand span{display:block;margin-top:10px;color:#bdc9d6;font-size:.92rem}
+.nav-group+.nav-group{margin-top:18px}
+.nav-label{margin:0 0 10px;font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:#92a3b6}
+.nav-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.nav-list a{display:block;padding:10px 11px;border-radius:10px;color:#dbe6f2;font-size:.94rem;transition:background .2s ease,color .2s ease}
+.nav-list a:hover,.nav-list a.active{background:rgba(255,255,255,.08);color:#fff}
+.sidebar-card{margin-top:22px;padding:15px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09)}
+.sidebar-card h4{margin:0 0 8px;font-size:.92rem}.sidebar-card p{margin:0;color:#b5c3d2;font-size:.85rem}
+.content{padding:28px 30px 56px}.toolbar{display:flex;justify-content:flex-end;align-items:center;margin-bottom:14px}.lang-switch{display:inline-flex;gap:4px;padding:4px;background:rgba(255,253,250,.92);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow)}.lang-btn{border:none;background:transparent;padding:8px 14px;border-radius:999px;color:#45525f;font-weight:600;cursor:pointer}.lang-btn.active{background:var(--brand);color:#fff}
+.article{max-width:1360px}.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#fcfaf5 0,#f7efe4 52%,#eef0ee 100%);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);padding:30px}.hero::after{content:"";position:absolute;inset:auto -40px -60px auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#d8b24c 0,rgba(216,178,76,0) 72%);opacity:.18;pointer-events:none}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid rgba(159,79,35,.18);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-deep)}.dot{width:8px;height:8px;border-radius:50%;background:var(--signal)}.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(360px,.8fr);gap:22px;align-items:start;margin-top:16px}h1{margin:14px 0 14px;font-size:3rem;line-height:1.02;letter-spacing:-.035em;max-width:820px}.lead{margin:0;color:#35404b;font-size:1.04rem;max-width:830px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.button-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:12px;border:1px solid var(--line-strong);background:#fff;color:var(--ink);font-weight:600}.button-link.primary{background:var(--brand);border-color:var(--brand);color:#fff}.quick-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:24px}.fact{padding:16px;border-radius:16px;background:rgba(255,255,255,.7);border:1px solid rgba(183,170,150,.5);backdrop-filter:blur(4px)}.fact strong{display:block;font-size:1.5rem;line-height:1;margin-bottom:6px}.fact span{display:block;font-size:.88rem;color:var(--muted)}.hero-panel{background:rgba(255,255,255,.64);border:1px solid rgba(183,170,150,.55);border-radius:22px;padding:16px;backdrop-filter:blur(5px)}.hero-visual{aspect-ratio:4/4.8;min-height:520px;overflow:hidden;border-radius:16px;border:1px solid rgba(183,170,150,.6);background:#f7f4ef}.hero-visual img{width:100%;height:100%;object-fit:contain;padding:10px}.hero-caption{display:grid;gap:12px;margin-top:14px}.mini-card{padding:14px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}.mini-card h3{margin:0 0 8px;font-size:.95rem}.mini-card p,.mini-card ul{margin:0;color:#44515c;font-size:.92rem}
+.section{margin-top:20px;background:rgba(255,253,250,.94);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.section-head{padding:24px 24px 10px}.section-head h2{margin:0;font-size:1.78rem;letter-spacing:-.025em}.section-head p{margin:8px 0 0;color:var(--muted);max-width:920px}.section-body{padding:0 24px 24px}
+.grid-2,.grid-3,.grid-4,.intro-grid{display:grid;gap:16px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.intro-grid{grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr)}
+.card{padding:18px;border-radius:18px;background:var(--panel);border:1px solid var(--line)}.card.alt{background:var(--panel-2)}.card.cool{background:var(--panel-3)}.card h3{margin:0 0 10px;font-size:1.04rem}.card p:last-child,.card ul:last-child{margin-bottom:0}.list{margin:0;padding-left:18px}.list li+li{margin-top:7px}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:.82rem;color:#394754}.signal-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:14px}.signal{padding:12px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(180deg,#fff 0,#f7f4ef 100%)}.signal strong{display:block;margin-bottom:4px;font-size:.9rem}.signal span{display:block;font-size:.84rem;color:var(--muted)}
+.figure{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff}.figure img{width:100%;height:auto;background:#fff}.figure figcaption{padding:12px 14px;background:#faf7f1;border-top:1px solid var(--line);font-size:.9rem;color:#485560}
+.figure.full-width{width:100%;margin-bottom:16px}
+.note,.warn{padding:14px 16px;border-radius:14px}.note{background:var(--signal-soft);border:1px solid #bfd6db;color:#23484d}.warn{background:#fbf0d9;border:1px solid #e6cf95;color:#704f0e}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px;background:#fff}table.matrix,table.kv{width:100%;border-collapse:collapse}table.matrix{min-width:760px}table.matrix th,table.matrix td,table.kv th,table.kv td{padding:11px 12px;border-bottom:1px solid #e7dfd3;text-align:left;vertical-align:top;font-size:.93rem}table.matrix th,table.kv th{background:#f8f4ed;font-weight:700}table.matrix th:not(:last-child),table.matrix td:not(:last-child){border-right:1px solid #ece4d8}table.matrix tbody tr:last-child td,table.kv tr:last-child th,table.kv tr:last-child td{border-bottom:none}table.kv th{width:220px}
+.compare-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}.faq details{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px}.faq details+details{margin-top:12px}.faq summary{cursor:pointer;font-weight:600}.faq p{margin:12px 0 0;color:#45515b}.footer{margin-top:28px;text-align:center;color:#697584;font-size:.9rem}
+.lang-vi{display:none}body[data-lang='vi'] .lang-en{display:none}body[data-lang='vi'] .lang-vi{display:inline}body[data-lang='en'] .lang-en{display:inline}body[data-lang='en'] .lang-vi{display:none}body[data-lang='vi'] .lang-vi.block{display:block}body[data-lang='vi'] .lang-en.block{display:none}body[data-lang='en'] .lang-en.block{display:block}body[data-lang='en'] .lang-vi.block{display:none}body[data-lang='vi'] .lang-vi.inline-flex{display:inline-flex}body[data-lang='vi'] .lang-en.inline-flex{display:none}body[data-lang='en'] .lang-en.inline-flex{display:inline-flex}body[data-lang='en'] .lang-vi.inline-flex{display:none}
+@media (max-width:1220px){.layout{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.content{padding:22px}.hero-grid,.intro-grid,.compare-grid{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.signal-strip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.content{padding:16px}.hero{padding:20px}h1{font-size:2.16rem}.quick-facts,.grid-2,.grid-3,.grid-4,.signal-strip{grid-template-columns:1fr}.section-head,.section-body{padding-left:18px;padding-right:18px}.toolbar{justify-content:flex-start}}
 </style>
 </head>
 <body data-lang="en">
@@ -52,8 +55,8 @@ body[data-lang='vi'] .lang-vi.inline-flex{display:inline-flex}body[data-lang='vi
         <span class="lang-vi">Bộ điều khiển bay Edge Computing<br>Pixhawk 6X</span>
       </strong>
       <span>
-        <span class="lang-en">Integrated FMUv6 flight control, CM5 edge compute, 4G/5G modem and Ethernet on a unified platform.</span>
-        <span class="lang-vi">Tích hợp điều khiển bay FMUv6, tính toán biên CM5, modem 4G/5G và Ethernet trên cùng một nền tảng.</span>
+        <span class="lang-en">FMUv6 autopilot, CM5 edge compute, 4G/5G modem support and Ethernet on one unified baseboard.</span>
+        <span class="lang-vi">Tích hợp autopilot FMUv6, tính toán biên CM5, hỗ trợ modem 4G/5G và Ethernet trên cùng một baseboard.</span>
       </span>
     </div>
     <div class="nav-group">
@@ -62,6 +65,7 @@ body[data-lang='vi'] .lang-vi.inline-flex{display:inline-flex}body[data-lang='vi
         <li><a href="#overview"><span class="lang-en">Project Overview</span><span class="lang-vi">Tổng quan dự án</span></a></li>
         <li><a href="#architecture"><span class="lang-en">System Architecture</span><span class="lang-vi">Kiến trúc hệ thống</span></a></li>
         <li><a href="#advantages"><span class="lang-en">Key Advantages</span><span class="lang-vi">Ưu điểm chính</span></a></li>
+        <li><a href="#positioning"><span class="lang-en">Compute-Class Positioning</span><span class="lang-vi">Định vị Compute-Class</span></a></li>
       </ul>
     </div>
     <div class="nav-group">
@@ -74,7 +78,6 @@ body[data-lang='vi'] .lang-vi.inline-flex{display:inline-flex}body[data-lang='vi
         <li><a href="#power"><span class="lang-en">Power Architecture</span><span class="lang-vi">Kiến trúc nguồn</span></a></li>
         <li><a href="#interfaces"><span class="lang-en">Interfaces</span><span class="lang-vi">Giao tiếp</span></a></li>
         <li><a href="#connectors"><span class="lang-en">Connectors</span><span class="lang-vi">Cổng kết nối</span></a></li>
-        <li><a href="#bom"><span class="lang-en">Key BOM</span><span class="lang-vi">Linh kiện chính</span></a></li>
       </ul>
     </div>
     <div class="nav-group">
@@ -82,130 +85,187 @@ body[data-lang='vi'] .lang-vi.inline-flex{display:inline-flex}body[data-lang='vi
       <ul class="nav-list">
         <li><a href="#software"><span class="lang-en">Software Compatibility</span><span class="lang-vi">Tương thích phần mềm</span></a></li>
         <li><a href="#applications"><span class="lang-en">Target Applications</span><span class="lang-vi">Ứng dụng mục tiêu</span></a></li>
-        <li><a href="#messaging"><span class="lang-en">Positioning</span><span class="lang-vi">Định vị sản phẩm</span></a></li>
         <li><a href="#faq"><span class="lang-en">FAQ</span><span class="lang-vi">Câu hỏi thường gặp</span></a></li>
       </ul>
     </div>
     <div class="sidebar-card">
-      <h4><span class="lang-en">Source Basis</span><span class="lang-vi">Cơ sở nội dung</span></h4>
-      <p><span class="lang-en">This wiki is consolidated from the repository README and reorganized in a documentation style inspired by UTMSYS.</span><span class="lang-vi">Wiki này được tổng hợp từ README của repo và tổ chức lại theo kiểu tài liệu tham khảo từ UTMSYS.</span></p>
+      <h4><span class="lang-en">Documentation Direction</span><span class="lang-vi">Định hướng tài liệu</span></h4>
+      <p><span class="lang-en">This page is structured like a product wiki: fast summary first, architectural context second, then hardware tables and integration details.</span><span class="lang-vi">Trang này được tổ chức theo kiểu product wiki: tóm tắt nhanh trước, kiến trúc sau, rồi đến bảng phần cứng và chi tiết tích hợp.</span></p>
     </div>
   </aside>
   <main class="content">
     <div class="toolbar">
       <div class="lang-switch" aria-label="Language switch">
-        <button class="lang-btn active" data-lang-choice="en">EN</button>
-        <button class="lang-btn" data-lang-choice="vi">VI</button>
+        <button class="lang-btn active" data-lang-choice="en" type="button">EN</button>
+        <button class="lang-btn" data-lang-choice="vi" type="button">VI</button>
       </div>
     </div>
     <div class="article">
       <section class="hero" id="overview">
-        <div class="eyebrow"><span class="dot"></span><span class="lang-en">FMUv6 / Pixhawk 6X Wiki</span><span class="lang-vi">Wiki FMUv6 / Pixhawk 6X</span></div>
-        <h1><span class="lang-en">Full product wiki for an edge-native Pixhawk-class flight controller.</span><span class="lang-vi">Trang wiki đầy đủ cho bộ điều khiển bay chuẩn Pixhawk tích hợp edge computing.</span></h1>
-        <p class="lead"><span class="lang-en">The Edge Computing Flight Controller Pixhawk 6X combines an FMUv6 flight controller, Raspberry Pi Compute Module 5, integrated 4G/5G modem support, and Ethernet networking on one baseboard. It is designed for autonomous systems that need onboard AI, high-bandwidth communications, and Pixhawk ecosystem compatibility without stacking extra companion boards.</span><span class="lang-vi">Edge Computing Flight Controller Pixhawk 6X kết hợp bộ điều khiển bay FMUv6, Raspberry Pi Compute Module 5, hỗ trợ modem 4G/5G tích hợp và mạng Ethernet trên cùng một bo mạch đế. Sản phẩm hướng tới các hệ tự hành cần AI trên thiết bị, kết nối băng thông cao và khả năng tương thích hệ sinh thái Pixhawk mà không cần xếp thêm bộ máy tính companion bên ngoài.</span></p>
-        <div class="chip-row">
-          <span class="chip">PX4</span><span class="chip">ArduPilot</span><span class="chip">CM5</span><span class="chip">4G/5G</span><span class="chip">Dual CAN</span><span class="chip">16 PWM</span><span class="chip"><span class="lang-en">Triple Power</span><span class="lang-vi">Nguồn 3 lớp</span></span>
-        </div>
+        <div class="eyebrow"><span class="dot"></span><span class="lang-en">Pixhawk 6X + Edge Compute Wiki</span><span class="lang-vi">Wiki Pixhawk 6X + Edge Compute</span></div>
         <div class="hero-grid">
-          <div class="stat"><strong>16</strong><span><span class="lang-en">Total PWM channels, split MAIN + AUX</span><span class="lang-vi">Tổng 16 kênh PWM, chia MAIN + AUX</span></span></div>
-          <div class="stat"><strong>3x</strong><span><span class="lang-en">Independent power inputs</span><span class="lang-vi">3 đầu vào nguồn độc lập</span></span></div>
-          <div class="stat"><strong>2x</strong><span><span class="lang-en">GPS ports and CAN buses</span><span class="lang-vi">Cổng GPS và bus CAN đôi</span></span></div>
-          <div class="stat"><strong>CM5</strong><span><span class="lang-en">Linux edge compute onboard</span><span class="lang-vi">Tính toán Linux tích hợp</span></span></div>
+          <div>
+            <h1><span class="lang-en">A compute-native Pixhawk-class controller for AI, cloud telemetry and field robotics.</span><span class="lang-vi">Một flight controller chuẩn Pixhawk được thiết kế theo hướng compute-native cho AI, telemetry đám mây và robot tự hành.</span></h1>
+            <p class="lead"><span class="lang-en">The Edge Computing Flight Controller Pixhawk 6X merges FMUv6 flight control, Raspberry Pi Compute Module 5, integrated 4G/5G modem support and Ethernet networking onto one baseboard. The goal is to remove the usual stack of autopilot plus companion computer plus modem, while keeping compatibility with PX4, ArduPilot and standard Pixhawk peripherals.</span><span class="lang-vi">Edge Computing Flight Controller Pixhawk 6X kết hợp điều khiển bay FMUv6, Raspberry Pi Compute Module 5, hỗ trợ modem 4G/5G tích hợp và mạng Ethernet trên một baseboard duy nhất. Mục tiêu là loại bỏ cấu trúc autopilot cộng companion computer cộng modem rời, trong khi vẫn giữ tương thích với PX4, ArduPilot và hệ ngoại vi chuẩn Pixhawk.</span></p>
+            <div class="hero-actions">
+              <a class="button-link primary" href="#architecture"><span class="lang-en">View System Architecture</span><span class="lang-vi">Xem kiến trúc hệ thống</span></a>
+              <a class="button-link" href="#positioning"><span class="lang-en">See Compute-Class Positioning</span><span class="lang-vi">Xem định vị Compute-Class</span></a>
+            </div>
+            <div class="quick-facts">
+              <div class="fact"><strong>Pixhawk 6X</strong><span><span class="lang-en">FMUv6-class flight control foundation</span><span class="lang-vi">Nền tảng điều khiển bay chuẩn FMUv6</span></span></div>
+              <div class="fact"><strong>CM5</strong><span><span class="lang-en">Linux compute integrated onboard</span><span class="lang-vi">Linux compute tích hợp ngay trên board</span></span></div>
+              <div class="fact"><strong>4G/5G</strong><span><span class="lang-en">Cellular-ready architecture for connected missions</span><span class="lang-vi">Kiến trúc sẵn sàng cho nhiệm vụ có kết nối di động</span></span></div>
+              <div class="fact"><strong>AI Ready</strong><span><span class="lang-en">Built for perception, CV and autonomy workloads</span><span class="lang-vi">Sẵn sàng cho perception, thị giác máy tính và tự hành</span></span></div>
+              <div class="fact"><strong>16</strong><span><span class="lang-en">PWM outputs across MAIN and AUX</span><span class="lang-vi">16 ngõ ra PWM cho MAIN và AUX</span></span></div>
+              <div class="fact"><strong>Dual Camera</strong><span><span class="lang-en">Two CSI inputs for stereo or payload vision</span><span class="lang-vi">Hai đầu vào CSI cho stereo hoặc camera nhiệm vụ</span></span></div>
+              <div class="fact"><strong>PX4 / ArduPilot</strong><span><span class="lang-en">Compatible with mainstream autopilot stacks</span><span class="lang-vi">Tương thích các flight stack phổ biến</span></span></div>
+              <div class="fact"><strong>Fail-Safe</strong><span><span class="lang-en">Triple-input power design for resilient operation</span><span class="lang-vi">Thiết kế nguồn ba đầu vào cho vận hành bền vững</span></span></div>
+            </div>
+          </div>
+          <div class="hero-panel">
+            <div class="hero-visual">
+              <img src="images/FC_HBQ.jpg" alt="Board photo of the Edge Computing Flight Controller Pixhawk 6X" loading="eager">
+            </div>
+            <div class="hero-caption">
+              <div class="mini-card">
+                <h3><span class="lang-en">Product Snapshot</span><span class="lang-vi">Tóm tắt sản phẩm</span></h3>
+                <p><span class="lang-en">This product is built for autonomous systems that need more than flight stabilization alone. It combines Pixhawk-class control, onboard Linux compute, cellular connectivity and resilient power architecture into one compact platform, helping teams deploy AI-ready, connected vehicles with less wiring, less integration overhead and a cleaner system design.</span><span class="lang-vi">Sản phẩm này được thiết kế cho các hệ tự hành cần nhiều hơn khả năng ổn định bay. Nó kết hợp điều khiển chuẩn Pixhawk, Linux compute onboard, kết nối di động và kiến trúc nguồn bền vững trong một nền tảng gọn, giúp đội phát triển triển khai phương tiện kết nối, sẵn sàng cho AI với ít dây nối hơn, ít công tích hợp hơn và thiết kế hệ thống sạch hơn.</span></p>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </section>
-
       <section class="section" id="architecture">
         <div class="section-head">
           <h2><span class="lang-en">System Architecture</span><span class="lang-vi">Kiến trúc hệ thống</span></h2>
-          <p><span class="lang-en">A modular flight-control plus compute design on one shared baseboard.</span><span class="lang-vi">Thiết kế điều khiển bay và tính toán được tích hợp trên cùng một baseboard.</span></p>
+          <p><span class="lang-en">The key architectural idea is simple: keep the real-time flight stack deterministic on FMUv6, move heavy Linux and AI workloads to CM5, and bind both domains tightly through internal UART and Ethernet while the modem extends the whole platform to the cloud.</span><span class="lang-vi">Ý tưởng kiến trúc cốt lõi khá rõ ràng: giữ vòng điều khiển thời gian thực trên FMUv6, chuyển tải Linux và AI nặng sang CM5, rồi liên kết chặt hai miền này bằng UART và Ethernet nội bộ, trong khi modem mở rộng toàn bộ nền tảng ra đám mây.</span></p>
         </div>
         <div class="section-body">
+          <figure class="figure full-width">
+              <img src="images/Edge Computing Flight Controller FMU6x.jpg" alt="Block diagram showing 4G/5G module, Raspberry Pi CM5, Pixhawk 6X and STM32F103 interconnections" loading="lazy">
+              <figcaption><span class="lang-en">Block diagram showing the relationship between the 4G/5G module, Raspberry Pi CM5, Pixhawk 6X core and STM32F103 IO coprocessor.</span><span class="lang-vi">Sơ đồ khố thể hiện mối liên hệ giữa mô-đun 4G/5G, Raspberry Pi CM5, lõi Pixhawk 6X và đồng xử lý IO STM32F103.</span></figcaption>
+          </figure>
           <div class="intro-grid">
-            <div><div class="diagram">POWER INPUTS
-PW1 5V/4A ----\\
-PW2 5V/4A ----- LTC4417 priority selector ---- VDD_5V_IN ---- protected rails
-PW3 12V/3A ----/
-USB 5V/4A ------------------------------------/
-
-                          +------------------------------+
-                          | Edge Computing Baseboard     |
-                          |  FMUv6 + IO + EEPROM + ETH   |
-                          |              |               |
-                          |        UART / ETH / I2C      |
-                          |              |               |
-                          |            CM5 Linux         |
-                          |      USB3 / HDMI / CSI       |
-                          |              |               |
-                          |           PCIe + USB         |
-                          |              |               |
-                          |         4G LTE / 5G Modem    |
-                          +------------------------------+</div></div>
-            <div class="card">
-              <h3><span class="lang-en">Architecture summary</span><span class="lang-vi">Tóm tắt kiến trúc</span></h3>
+            <div class="card alt">
+              <h3><span class="lang-en">Architecture Summary</span><span class="lang-vi">Tóm tắt kiến trúc</span></h3>
               <ul class="list">
-                <li><span class="lang-en">FMUv6 handles deterministic real-time flight control.</span><span class="lang-vi">FMUv6 đảm nhận điều khiển bay thời gian thực, chính xác và ổn định.</span></li>
-                <li><span class="lang-en">CM5 runs Linux, ROS 2, AI inference, video and networking workloads.</span><span class="lang-vi">CM5 chạy Linux, ROS 2, suy luận AI, video và các ứng dụng mạng.</span></li>
-                <li><span class="lang-en">The M.2 modem enables cellular telemetry, cloud link and remote operation.</span><span class="lang-vi">Modem M.2 cung cấp telemetry qua mạng di động, kết nối đám mây và điều khiển từ xa.</span></li>
-                <li><span class="lang-en">Internal UART and Ethernet links keep FMU and compute tightly coupled.</span><span class="lang-vi">Liên kết UART và Ethernet nội bộ giúp FMU và khối tính toán kết nối chặt chẽ.</span></li>
-                <li><span class="lang-en">Triple power redundancy improves mission resilience.</span><span class="lang-vi">Nguồn 3 lớp giúp tăng độ tin cậy và khả năng duy trì nhiệm vụ.</span></li>
+                <li><span class="lang-en">FMUv6 remains the deterministic control brain for sensors, RC, mixers, safety logic and mission-critical loops.</span><span class="lang-vi">FMUv6 vẫn là bộ não điều khiển tất định cho cảm biến, RC, mixer, logic an toàn và các vòng lặp nhiệm vụ quan trọng.</span></li>
+                <li><span class="lang-en">CM5 hosts Linux, ROS 2, vision pipelines, AI inference, video encoding and higher-level autonomy software.</span><span class="lang-vi">CM5 chạy Linux, ROS 2, pipeline thị giác máy tính, suy luận AI, mã hóa video và phần mềm tự hành cấp cao.</span></li>
+                <li><span class="lang-en">The M.2 modem path adds cellular backhaul for telemetry, remote management and live streaming.</span><span class="lang-vi">Đường modem M.2 bổ sung kết nối di động cho telemetry, quản trị từ xa và truyền hình ảnh trực tiếp.</span></li>
+                <li><span class="lang-en">Triple redundant power makes the platform more suitable for field deployment than a casual autopilot plus SBC stack.</span><span class="lang-vi">Nguồn ba lớp giúp nền tảng phù hợp hơn cho triển khai thực địa so với cấu hình autopilot cộng SBC thông thường.</span></li>
+              </ul>
+              <div class="note" style="margin-top:14px"><span class="lang-en">This layout is exactly what makes the product feel like a complete autonomous-system controller rather than just a flight-control board.</span><span class="lang-vi">Chính cấu trúc này khiến sản phẩm mang tính một bộ điều khiển hệ tự hành hoàn chỉnh hơn là chỉ một flight-control board đơn thuần.</span></div>
+            </div>
+            <div class="card cool">
+              <h3><span class="lang-en">How To Read The Diagram</span><span class="lang-vi">Cách đọc sơ đồ</span></h3>
+              <ul class="list">
+                <li><span class="lang-en">Left side: connectivity and compute expansion, including modem and CM5.</span><span class="lang-vi">Bên trái: khối mở rộng kết nối và compute, gồm modem và CM5.</span></li>
+                <li><span class="lang-en">Center: Pixhawk 6X flight-control core and internal system links.</span><span class="lang-vi">Ở giữa: lõi điều khiển bay Pixhawk 6X và các liên kết nội bộ.</span></li>
+                <li><span class="lang-en">Right side: IO coprocessor and field-facing PWM or RC functions.</span><span class="lang-vi">Bên phải: đồng xử lý IO và các chức năng PWM hoặc RC hướng ra hiện trường.</span></li>
+                <li><span class="lang-en">Top and bottom edges: peripheral interfaces used for navigation, telemetry, debugging and payload expansion.</span><span class="lang-vi">Phía trên và dưới: các giao tiếp ngoại vi dùng cho dẫn đường, telemetry, debug và mở rộng payload.</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="signal-strip">
+            <div class="signal"><strong><span class="lang-en">Flight Domain</span><span class="lang-vi">Miền điều khiển bay</span></strong><span>STM32H7xx + FMUv6 peripherals</span></div>
+            <div class="signal"><strong><span class="lang-en">Compute Domain</span><span class="lang-vi">Miền tính toán</span></strong><span>CM5 running Linux and AI workloads</span></div>
+            <div class="signal"><strong><span class="lang-en">Internal Links</span><span class="lang-vi">Liên kết nội bộ</span></strong><span>UART2, UART3, internal Ethernet, I2C3</span></div>
+            <div class="signal"><strong><span class="lang-en">Backhaul</span><span class="lang-vi">Kết nối ngoài</span></strong><span>4G LTE / 5G via PCIe and USB</span></div>
+            <div class="signal"><strong><span class="lang-en">Field I/O</span><span class="lang-vi">I/O hiện trường</span></strong><span>GPS, CAN, PWM, DSM, SPI, TELEM, ETH</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="advantages">
+        <div class="section-head">
+          <h2><span class="lang-en">Key Advantages</span><span class="lang-vi">Ưu điểm chính</span></h2>
+          <p><span class="lang-en">The differentiator is not just one faster module. The differentiator is that flight control, compute and connectivity are architected together from the start.</span><span class="lang-vi">Điểm khác biệt không chỉ nằm ở một mô-đun mạnh hơn. Điểm khác biệt là điều khiển bay, tính toán và kết nối được thiết kế cùng nhau ngay từ đầu.</span></p>
+        </div>
+        <div class="section-body">
+          <div class="grid-4">
+            <div class="card cool"><h3><span class="lang-en">Integrated Edge AI</span><span class="lang-vi">AI Edge tích hợp</span></h3><p><span class="lang-en">CM5 provides enough Linux compute to host OpenCV, TensorFlow Lite, MAVSDK and ROS 2 on the same vehicle controller.</span><span class="lang-vi">CM5 cung cấp đủ năng lực Linux compute để chạy OpenCV, TensorFlow Lite, MAVSDK và ROS 2 ngay trên cùng bộ điều khiển phương tiện.</span></p></div>
+            <div class="card alt"><h3><span class="lang-en">Always-Connected Design</span><span class="lang-vi">Thiết kế luôn kết nối</span></h3><p><span class="lang-en">With 4G/5G modem support and Ethernet paths, the platform is ready for live telemetry, video and OTA workflows.</span><span class="lang-vi">Với hỗ trợ modem 4G/5G và Ethernet, nền tảng sẵn sàng cho telemetry trực tiếp, video và quy trình OTA.</span></p></div>
+            <div class="card"><h3><span class="lang-en">Pixhawk Ecosystem Fit</span><span class="lang-vi">Phù hợp hệ sinh thái Pixhawk</span></h3><p><span class="lang-en">It remains anchored in FMUv6 and Pixhawk 6X expectations, so teams do not need to abandon familiar peripherals and flight stacks.</span><span class="lang-vi">Sản phẩm vẫn dựa trên FMUv6 và logic Pixhawk 6X, nên đội phát triển không phải bỏ các ngoại vi và flight stack quen thuộc.</span></p></div>
+            <div class="card cool"><h3><span class="lang-en">Cleaner Vehicle Integration</span><span class="lang-vi">Tích hợp phương tiện gọn hơn</span></h3><p><span class="lang-en">A single board cuts down wiring, power-distribution duplication, EMI risk and packaging complexity compared with multi-board companion-computer setups.</span><span class="lang-vi">Một bo mạch duy nhất giúp giảm dây nối, giảm trùng lặp phân phối nguồn, giảm rủi ro EMI và giảm độ phức tạp đóng gói so với cấu hình companion-computer nhiều board.</span></p></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="positioning">
+        <div class="section-head">
+          <h2><span class="lang-en">Compute-Class Positioning</span><span class="lang-vi">Định vị Compute-Class</span></h2>
+          <p><span class="lang-en">This product should be presented in the same category as modern computing-power flight controllers, not merely as an upgraded Pixhawk.</span><span class="lang-vi">Sản phẩm này nên được giới thiệu trong cùng nhóm với các computing-power flight controller hiện đại, chứ không chỉ như một Pixhawk được nâng cấp.</span></p>
+        </div>
+        <div class="section-body">
+          <div class="compare-grid">
+            <div class="card">
+              <h3><span class="lang-en">Market Context</span><span class="lang-vi">Bối cảnh thị trường</span></h3>
+              <p><span class="lang-en">The market is moving away from separated autopilot, companion computer and communication boxes toward unified control platforms that can fly, perceive and stay connected in one deployable system. This product fits that trend directly: it keeps Pixhawk-class flight control at the core, adds onboard Linux compute for AI and autonomy, and treats 4G/5G plus Ethernet as built-in operational infrastructure rather than optional add-ons.</span><span class="lang-vi">Thị trường đang dịch chuyển từ mô hình autopilot, companion computer và khối truyền thông tách rời sang các nền tảng điều khiển hợp nhất có thể vừa bay, vừa xử lý perception, vừa duy trì kết nối trong một hệ thống sẵn sàng triển khai. Sản phẩm này đi đúng theo xu hướng đó: vẫn giữ điều khiển bay chuẩn Pixhawk ở lõi, bổ sung Linux compute onboard cho AI và tự hành, đồng thời xem 4G/5G và Ethernet là hạ tầng vận hành tích hợp sẵn chứ không phải các phần gắn thêm tùy chọn.</span></p>
+              <div class="chip-row" style="margin-top:12px">
+                <span class="chip"><span class="lang-en">Pixhawk-class control</span><span class="lang-vi">Điều khiển chuẩn Pixhawk</span></span>
+                <span class="chip"><span class="lang-en">Integrated compute</span><span class="lang-vi">Compute tích hợp</span></span>
+                <span class="chip"><span class="lang-en">Vehicle AI</span><span class="lang-vi">AI trên phương tiện</span></span>
+                <span class="chip"><span class="lang-en">Cloud backhaul</span><span class="lang-vi">Backhaul lên đám mây</span></span>
+              </div>
+            </div>
+            <div class="card alt">
+              <h3><span class="lang-en">How To Describe It</span><span class="lang-vi">Cách mô tả sản phẩm</span></h3>
+              <ul class="list">
+                <li><span class="lang-en">Call it a compute-native flight controller or an edge-computing autopilot platform.</span><span class="lang-vi">Nên gọi đây là compute-native flight controller hoặc edge-computing autopilot platform.</span></li>
+                <li><span class="lang-en">Emphasize that CM5 is not an external companion board; it is part of the system architecture.</span><span class="lang-vi">Cần nhấn mạnh CM5 không phải board companion gắn ngoài; nó là một phần của kiến trúc hệ thống.</span></li>
+                <li><span class="lang-en">Position 4G/5G as an operational feature, not an accessory: fleet telemetry, BVLOS and remote service workflows depend on it.</span><span class="lang-vi">Hãy định vị 4G/5G như một tính năng vận hành chứ không phải phụ kiện: telemetry đội xe, BVLOS và quy trình dịch vụ từ xa phụ thuộc vào nó.</span></li>
+                <li><span class="lang-en">Frame the board as a deployment-ready autonomy controller for UAV, UGV and marine robotics.</span><span class="lang-vi">Nên đóng khung sản phẩm như một autonomy controller sẵn sàng triển khai cho UAV, UGV và robot hàng hải.</span></li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-
-      <section class="section" id="advantages">
-        <div class="section-head">
-          <h2><span class="lang-en">Key Advantages</span><span class="lang-vi">Ưu điểm chính</span></h2>
-          <p><span class="lang-en">Main differentiators compared with a standard Pixhawk-only controller.</span><span class="lang-vi">Những điểm khác biệt chính so với flight controller Pixhawk thông thường.</span></p>
-        </div>
-        <div class="section-body">
-          <div class="quad-grid">
-            <div class="card"><h3><span class="lang-en">Integrated edge AI</span><span class="lang-vi">AI edge tích hợp</span></h3><p><span class="lang-en">CM5 supports TensorFlow Lite, PyTorch and OpenCV with dual CSI camera inputs.</span><span class="lang-vi">CM5 hỗ trợ TensorFlow Lite, PyTorch và OpenCV, kèm hai cổng camera CSI.</span></p></div>
-            <div class="card"><h3><span class="lang-en">Native cellular</span><span class="lang-vi">Kết nối di động native</span></h3><p><span class="lang-en">4G/5G support enables BVLOS telemetry, cloud connectivity and live video streaming.</span><span class="lang-vi">Hỗ trợ 4G/5G giúp telemetry BVLOS, kết nối đám mây và truyền video trực tiếp.</span></p></div>
-            <div class="card"><h3><span class="lang-en">Pixhawk compatible</span><span class="lang-vi">Tương thích Pixhawk</span></h3><p><span class="lang-en">Keeps FMUv6 ecosystem compatibility with common peripherals and flight stacks.</span><span class="lang-vi">Giữ tương thích hệ sinh thái FMUv6 với các ngoại vi và firmware phổ biến.</span></p></div>
-            <div class="card"><h3><span class="lang-en">Mission resilience</span><span class="lang-vi">Độ bền nhiệm vụ</span></h3><p><span class="lang-en">Multi-input power and protected rails reduce single-point failures.</span><span class="lang-vi">Nguồn nhiều đầu vào và các đường nguồn bảo vệ giúp giảm rủi ro điểm lỗi đơn lẻ.</span></p></div>
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="fmu">
         <div class="section-head">
           <h2><span class="lang-en">FMUv6 Flight Controller</span><span class="lang-vi">Khối điều khiển bay FMUv6</span></h2>
-          <p><span class="lang-en">Main autopilot subsystem aligned with Pixhawk 6X assumptions.</span><span class="lang-vi">Hệ thống autopilot chính được xây dựng theo hướng tương thích Pixhawk 6X.</span></p>
+          <p><span class="lang-en">The FMU remains the real-time core. This is important: the board adds compute without weakening the flight-control foundation.</span><span class="lang-vi">FMU vẫn là lõi thời gian thực. Điểm này rất quan trọng: board bổ sung compute nhưng không làm suy yếu nền tảng điều khiển bay.</span></p>
         </div>
         <div class="section-body">
           <div class="table-wrap">
             <table class="kv">
               <tr><th><span class="lang-en">Standard</span><span class="lang-vi">Chuẩn</span></th><td><span class="lang-en">Pixhawk FMUv6 / Pixhawk 6X compatible</span><span class="lang-vi">Tương thích Pixhawk FMUv6 / Pixhawk 6X</span></td></tr>
-              <tr><th><span class="lang-en">Main processor</span><span class="lang-vi">Bộ xử lý chính</span></th><td>STM32H7xx, 480 MHz Cortex-M7 with FPU</td></tr>
-              <tr><th><span class="lang-en">Flash / RAM</span><span class="lang-vi">Flash / RAM</span></th><td><span class="lang-en">2 MB flash, 1 MB TCM + 512 KB DTCM</span><span class="lang-vi">2 MB flash, 1 MB TCM + 512 KB DTCM</span></td></tr>
-              <tr><th><span class="lang-en">EEPROM</span><span class="lang-vi">EEPROM</span></th><td>24LC64 on I2C3, address 0x51</td></tr>
-              <tr><th><span class="lang-en">Ethernet PHY</span><span class="lang-vi">PHY Ethernet</span></th><td>LAN8742A over RMII</td></tr>
-              <tr><th><span class="lang-en">USB</span><span class="lang-vi">USB</span></th><td><span class="lang-en">USB full-speed via USB-C</span><span class="lang-vi">USB full-speed qua cổng USB-C</span></td></tr>
-              <tr><th><span class="lang-en">Support functions</span><span class="lang-vi">Tính năng phụ trợ</span></th><td><span class="lang-en">Safety switch, buzzer, armed LED, version sense and RTC battery support</span><span class="lang-vi">Công tắc an toàn, buzzer, đèn armed, nhận dạng phiên bản và pin RTC</span></td></tr>
+              <tr><th><span class="lang-en">Main Processor</span><span class="lang-vi">Bộ xử lý chính</span></th><td>STM32H7xx, 480 MHz Cortex-M7 with FPU</td></tr>
+              <tr><th>Flash / RAM</th><td>2 MB flash, 1 MB TCM + 512 KB DTCM</td></tr>
+              <tr><th>EEPROM</th><td>24LC64 on I2C3, address 0x51</td></tr>
+              <tr><th><span class="lang-en">Ethernet PHY</span><span class="lang-vi">PHY Ethernet</span></th><td>LAN8742A via RMII</td></tr>
+              <tr><th>USB</th><td><span class="lang-en">USB full-speed through USB-C</span><span class="lang-vi">USB full-speed qua cổng USB-C</span></td></tr>
+              <tr><th><span class="lang-en">Support Signals</span><span class="lang-vi">Tín hiệu phụ trợ</span></th><td><span class="lang-en">Safety switch, buzzer, ARMED LED, version sense and RTC battery support</span><span class="lang-vi">Công tắc an toàn, buzzer, đèn ARMED, nhận dạng phiên bản và hỗ trợ pin RTC</span></td></tr>
             </table>
           </div>
         </div>
       </section>
-
       <section class="section" id="io">
         <div class="section-head">
           <h2><span class="lang-en">IO Coprocessor</span><span class="lang-vi">Đồng xử lý IO</span></h2>
-          <p><span class="lang-en">Dedicated STM32F103 subsystem for RC, PWM and support I/O.</span><span class="lang-vi">Khối STM32F103 riêng cho RC, PWM và các giao tiếp phụ trợ.</span></p>
+          <p><span class="lang-en">The STM32F103 block keeps RC, PWM, safety and service interfaces separate from the Linux compute domain.</span><span class="lang-vi">Khối STM32F103 giữ RC, PWM, an toàn và các giao tiếp dịch vụ tách khỏi miền Linux compute.</span></p>
         </div>
         <div class="section-body">
-          <div class="dual-grid">
-            <div class="card"><h3><span class="lang-en">Controller details</span><span class="lang-vi">Thông tin bộ điều khiển</span></h3><ul class="list"><li>STM32F103C8T7, 72 MHz Cortex-M3</li><li><span class="lang-en">8 AUX PWM outputs</span><span class="lang-vi">8 kênh PWM AUX</span></li><li><span class="lang-en">PPM and SBUS input support</span><span class="lang-vi">Hỗ trợ đầu vào PPM và SBUS</span></li><li>DSM receiver via USART1</li><li>USART6 link to FMU</li></ul></div>
-            <div class="card"><h3><span class="lang-en">Safety and debug</span><span class="lang-vi">An toàn và debug</span></h3><ul class="list"><li><span class="lang-en">Safety switch and LED output</span><span class="lang-vi">Công tắc an toàn và LED chỉ thị</span></li><li><span class="lang-en">Blue and amber status LEDs</span><span class="lang-vi">LED xanh và vàng trạng thái</span></li><li>RSSI input</li><li>Servo voltage sense</li><li>UART debug and SWD</li></ul></div>
+          <div class="grid-2">
+            <div class="card">
+              <h3><span class="lang-en">Controller Details</span><span class="lang-vi">Thông tin bộ điều khiển</span></h3>
+              <ul class="list">
+                <li>STM32F103C8T7, 72 MHz Cortex-M3</li>
+                <li><span class="lang-en">8 AUX PWM outputs</span><span class="lang-vi">8 kênh PWM AUX</span></li>
+                <li><span class="lang-en">PPM, SBUS and DSM receiver support</span><span class="lang-vi">Hỗ trợ PPM, SBUS và receiver DSM</span></li>
+                <li>USART6 internal link to FMU</li>
+                <li>Servo voltage sense and RSSI input</li>
+              </ul>
+            </div>
+            <div class="card cool">
+              <h3><span class="lang-en">Why It Matters</span><span class="lang-vi">Ý nghĩa của khối này</span></h3>
+              <p><span class="lang-en">A separate IO coprocessor preserves the traditional Pixhawk safety model. Even with heavy compute onboard, PWM generation, receiver handling and service I/O stay under a predictable microcontroller path.</span><span class="lang-vi">Một đồng xử lý IO riêng giữ lại mô hình an toàn truyền thống của Pixhawk. Ngay cả khi compute tải nặng, việc phát PWM, xử lý receiver và I/O dịch vụ vẫn nằm trên một đường vi điều khiển có tính dự đoán cao.</span></p>
+            </div>
           </div>
         </div>
       </section>
-
       <section class="section" id="cm5">
         <div class="section-head">
           <h2><span class="lang-en">CM5 Edge Module</span><span class="lang-vi">Mô-đun tính toán CM5</span></h2>
-          <p><span class="lang-en">Linux compute module integrated directly on the board.</span><span class="lang-vi">Mô-đun tính toán Linux được tích hợp trực tiếp trên bo mạch.</span></p>
+          <p><span class="lang-en">CM5 is the part that shifts this board from autopilot into autonomous-system platform territory.</span><span class="lang-vi">CM5 là phần biến board này từ autopilot thành một nền tảng cho hệ tự hành hoàn chỉnh.</span></p>
         </div>
         <div class="section-body">
           <div class="table-wrap">
@@ -214,84 +274,97 @@ USB 5V/4A ------------------------------------/
               <tr><th>CPU</th><td>Quad-core ARM Cortex-A76 at 2.4 GHz</td></tr>
               <tr><th>RAM</th><td>2 GB / 4 GB / 8 GB LPDDR4X</td></tr>
               <tr><th><span class="lang-en">Storage</span><span class="lang-vi">Lưu trữ</span></th><td><span class="lang-en">eMMC or NVMe via PCIe</span><span class="lang-vi">eMMC hoặc NVMe qua PCIe</span></td></tr>
-              <tr><th><span class="lang-en">Camera</span><span class="lang-vi">Camera</span></th><td>2x MIPI CSI-2</td></tr>
-              <tr><th><span class="lang-en">Display</span><span class="lang-vi">Hiển thị</span></th><td>1x HDMI</td></tr>
+              <tr><th><span class="lang-en">Vision I/O</span><span class="lang-vi">I/O thị giác</span></th><td>2x MIPI CSI-2, 1x HDMI</td></tr>
               <tr><th>USB</th><td>1x USB 3.0 + 1x USB-C boot</td></tr>
-              <tr><th><span class="lang-en">Networking</span><span class="lang-vi">Mạng</span></th><td><span class="lang-en">Internal FMU Ethernet link and external Gigabit Ethernet</span><span class="lang-vi">Liên kết Ethernet nội bộ với FMU và cổng Gigabit Ethernet ngoài</span></td></tr>
+              <tr><th><span class="lang-en">Links to FMU</span><span class="lang-vi">Liên kết với FMU</span></th><td><span class="lang-en">Internal Ethernet plus UART2 and UART3</span><span class="lang-vi">Ethernet nội bộ cùng UART2 và UART3</span></td></tr>
+              <tr><th><span class="lang-en">External Functions</span><span class="lang-vi">Chức năng bên ngoài</span></th><td><span class="lang-en">Gigabit Ethernet, PCIe modem path, fan control and debug-access-friendly Linux environment</span><span class="lang-vi">Gigabit Ethernet, đường modem PCIe, điều khiển quạt và môi trường Linux thuận tiện cho debug</span></td></tr>
             </table>
           </div>
         </div>
       </section>
-
       <section class="section" id="modem">
         <div class="section-head">
           <h2><span class="lang-en">4G/5G Connectivity Module</span><span class="lang-vi">Mô-đun kết nối 4G/5G</span></h2>
-          <p><span class="lang-en">M.2 modem subsystem for always-connected autonomous systems.</span><span class="lang-vi">Hệ thống modem M.2 cho các nền tảng tự hành luôn kết nối.</span></p>
+          <p><span class="lang-en">The modem is not an afterthought. It turns the board into a field-deployable node for connected autonomy.</span><span class="lang-vi">Modem không phải phần thêm vào sau cùng. Nó biến board thành một nút triển khai thực địa cho hệ tự hành có kết nối.</span></p>
         </div>
         <div class="section-body">
-          <div class="dual-grid">
-            <div class="card"><h3><span class="lang-en">Hardware interface</span><span class="lang-vi">Giao tiếp phần cứng</span></h3><ul class="list"><li><span class="lang-en">M.2 connector for 4G LTE / 5G NR module</span><span class="lang-vi">Cổng M.2 cho modem 4G LTE / 5G NR</span></li><li>PCIe Gen 2 and USB 3.0</li><li><span class="lang-en">Nano SIM slot</span><span class="lang-vi">Khe Nano SIM</span></li><li><span class="lang-en">USB SuperSpeed ESD protection</span><span class="lang-vi">Bảo vệ ESD cho USB tốc độ cao</span></li></ul></div>
-            <div class="card"><h3><span class="lang-en">Control and power</span><span class="lang-vi">Điều khiển và nguồn</span></h3><ul class="list"><li><span class="lang-en">ON/OFF, reset and power control lines</span><span class="lang-vi">Có đường ON/OFF, reset và điều khiển nguồn</span></li><li>3.8 V rail from MAX20077</li><li><span class="lang-en">Flight mode and GNSS mode signals</span><span class="lang-vi">Tín hiệu Flight mode và GNSS mode</span></li><li><span class="lang-en">Disable and power-off pins for modem management</span><span class="lang-vi">Chân disable và power-off để quản lý modem</span></li></ul></div>
+          <div class="grid-2">
+            <div class="card alt">
+              <h3><span class="lang-en">Interface and Hardware</span><span class="lang-vi">Giao tiếp và phần cứng</span></h3>
+              <ul class="list">
+                <li><span class="lang-en">M.2 connector for 4G LTE / 5G NR modem</span><span class="lang-vi">Đầu nối M.2 cho modem 4G LTE / 5G NR</span></li>
+                <li>PCIe Gen 2 and USB 3.0 host paths</li>
+                <li><span class="lang-en">Nano SIM slot</span><span class="lang-vi">Khe Nano SIM</span></li>
+                <li><span class="lang-en">Designed for stable high-speed data and field deployment</span><span class="lang-vi">Thiết kế hướng tới truyền dữ liệu tốc độ cao ổn định và vận hành ngoài thực địa</span></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3><span class="lang-en">Operational Control</span><span class="lang-vi">Điều khiển vận hành</span></h3>
+              <ul class="list">
+                <li><span class="lang-en">Dedicated ON/OFF, reset and power-gate control lines</span><span class="lang-vi">Có các đường ON/OFF, reset và power-gate riêng</span></li>
+                <li><span class="lang-en">Dedicated modem power domain for reliable startup and runtime control</span><span class="lang-vi">Miền nguồn modem riêng để khởi động và điều khiển vận hành ổn định</span></li>
+                <li><span class="lang-en">Flight mode and GNSS mode pins for mission-aware modem behavior</span><span class="lang-vi">Chân Flight mode và GNSS mode cho hành vi modem theo nhiệm vụ</span></li>
+                <li><span class="lang-en">Fits cloud telemetry, remote operations and video uplink scenarios</span><span class="lang-vi">Phù hợp cho telemetry đám mây, điều hành từ xa và truyền video uplink</span></li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-
       <section class="section" id="power">
         <div class="section-head">
           <h2><span class="lang-en">Power Architecture</span><span class="lang-vi">Kiến trúc nguồn</span></h2>
-          <p><span class="lang-en">Protected multi-input power tree for flight, compute and modem domains.</span><span class="lang-vi">Cây nguồn nhiều đầu vào có bảo vệ cho các khối bay, tính toán và modem.</span></p>
+          <p><span class="lang-en">This is one of the strongest parts of the design. It is much closer to an operational platform than to a hobby autopilot plus SBC assembly.</span><span class="lang-vi">Đây là một trong những phần mạnh nhất của thiết kế. Nó gần với một nền tảng vận hành thực tế hơn là cấu hình autopilot cộng SBC kiểu hobby.</span></p>
         </div>
         <div class="section-body">
-          <div class="note"><span class="lang-en">Power priority is managed by LTC4417. PW1 is highest priority, PW2 is secondary, and PW3 or USB is the fallback path.</span><span class="lang-vi">Thứ tự ưu tiên nguồn được quản lý bởi LTC4417. PW1 ưu tiên cao nhất, PW2 là nguồn thứ hai và PW3 hoặc USB là đường dự phòng.</span></div>
+          <div class="note"><span class="lang-en">Power priority is handled by LTC4417. PW1 is highest priority, PW2 is secondary, and PW3 or USB acts as the fallback path.</span><span class="lang-vi">Ưu tiên nguồn do LTC4417 quản lý. PW1 có ưu tiên cao nhất, PW2 là nguồn thứ hai, còn PW3 hoặc USB là đường dự phòng.</span></div>
           <div style="height:14px"></div>
           <div class="table-wrap">
             <table class="matrix">
-              <thead><tr><th><span class="lang-en">Rail</span><span class="lang-vi">Đường nguồn</span></th><th><span class="lang-en">Source IC</span><span class="lang-vi">IC nguồn</span></th><th><span class="lang-en">Voltage</span><span class="lang-vi">Điện áp</span></th><th><span class="lang-en">Primary load</span><span class="lang-vi">Tải chính</span></th></tr></thead>
+              <thead><tr><th><span class="lang-en">Rail</span><span class="lang-vi">Đường nguồn</span></th><th><span class="lang-en">Voltage</span><span class="lang-vi">Điện áp</span></th><th><span class="lang-en">Primary Load</span><span class="lang-vi">Tải chính</span></th><th><span class="lang-en">Role</span><span class="lang-vi">Vai trò</span></th></tr></thead>
               <tbody>
-                <tr><td>VDD_5V_IN</td><td>LTC4417 + diode OR</td><td>5V</td><td><span class="lang-en">Main bus from redundant inputs</span><span class="lang-vi">Bus chính từ các nguồn dự phòng</span></td></tr>
-                <tr><td>IO_VDD_3V3</td><td>MIC5332</td><td>3.3V</td><td><span class="lang-en">IO MCU and logic</span><span class="lang-vi">MCU IO và logic</span></td></tr>
-                <tr><td>FMU_VDD_3V3</td><td>TPS62821</td><td>3.3V</td><td><span class="lang-en">FMU main MCU domain</span><span class="lang-vi">Khối MCU chính của FMU</span></td></tr>
-                <tr><td>VDD_5V_PERIPH</td><td>BQ24315</td><td>5V</td><td>GPS1, TELEM2, SPI, I2C</td></tr>
-                <tr><td>VDD_5V_HIPOWER</td><td>BQ24315</td><td>5V</td><td>GPS2, TELEM1</td></tr>
-                <tr><td>VIN_CM5</td><td>Filtered passthrough</td><td>5V</td><td>CM5</td></tr>
-                <tr><td>3V8_DIO</td><td>MAX20077</td><td>3.8V</td><td><span class="lang-en">4G/5G modem</span><span class="lang-vi">Modem 4G/5G</span></td></tr>
+                <tr><td>VDD_5V_IN</td><td>5V</td><td><span class="lang-en">Main bus from redundant inputs</span><span class="lang-vi">Bus chính từ các nguồn dự phòng</span></td><td><span class="lang-en">Primary shared input rail for the full platform</span><span class="lang-vi">Đường nguồn vào dùng chung cho toàn bộ nền tảng</span></td></tr>
+                <tr><td>IO_VDD_3V3</td><td>3.3V</td><td><span class="lang-en">IO MCU and control logic</span><span class="lang-vi">MCU IO và logic điều khiển</span></td><td><span class="lang-en">Stable low-voltage domain for support electronics</span><span class="lang-vi">Miền điện áp thấp ổn định cho điện tử phụ trợ</span></td></tr>
+                <tr><td>FMU_VDD_3V3</td><td>3.3V</td><td><span class="lang-en">Main FMU domain</span><span class="lang-vi">Miền FMU chính</span></td><td><span class="lang-en">Dedicated flight-control rail for deterministic operation</span><span class="lang-vi">Miền nguồn riêng cho điều khiển bay ổn định</span></td></tr>
+                <tr><td>VDD_5V_PERIPH</td><td>5V</td><td>GPS1, TELEM2, SPI, I2C</td><td><span class="lang-en">Protected peripheral power for general field devices</span><span class="lang-vi">Nguồn ngoại vi có bảo vệ cho thiết bị hiện trường phổ thông</span></td></tr>
+                <tr><td>VDD_5V_HIPOWER</td><td>5V</td><td>GPS2, TELEM1</td><td><span class="lang-en">Protected higher-load rail for demanding peripherals</span><span class="lang-vi">Đường nguồn có bảo vệ cho ngoại vi tải cao hơn</span></td></tr>
+                <tr><td>VIN_CM5</td><td>5V</td><td>CM5</td><td><span class="lang-en">Compute power path sized for Linux and AI workloads</span><span class="lang-vi">Đường nguồn cho khối compute phù hợp tải Linux và AI</span></td></tr>
+                <tr><td>3V8_DIO</td><td>3.8V</td><td><span class="lang-en">4G/5G modem</span><span class="lang-vi">Modem 4G/5G</span></td><td><span class="lang-en">Dedicated cellular rail for stable communications</span><span class="lang-vi">Nguồn riêng cho kết nối di động ổn định</span></td></tr>
               </tbody>
             </table>
           </div>
           <div style="height:14px"></div>
-          <div class="warn"><span class="lang-en">Protected enable and fault-monitoring lines are important for staged bring-up, subsystem isolation and failure diagnosis.</span><span class="lang-vi">Các đường enable và giám sát lỗi có vai trò quan trọng trong quá trình cấp nguồn theo giai đoạn, cô lập subsystem và chẩn đoán sự cố.</span></div>
+          <div class="warn"><span class="lang-en">Protected enable and fault-monitoring lines are important during bring-up, subsystem isolation and fault diagnosis. That matters even more when one board combines flight logic, Linux compute and RF connectivity.</span><span class="lang-vi">Các đường enable có bảo vệ và giám sát lỗi rất quan trọng trong quá trình bring-up, cô lập subsystem và chẩn đoán sự cố. Điều này càng quan trọng hơn khi một board kết hợp cả logic bay, Linux compute và kết nối RF.</span></div>
         </div>
       </section>
-
       <section class="section" id="interfaces">
         <div class="section-head">
           <h2><span class="lang-en">Communication Interfaces</span><span class="lang-vi">Giao tiếp truyền thông</span></h2>
-          <p><span class="lang-en">Coverage for telemetry, payload, compute and sensor interconnects.</span><span class="lang-vi">Bao quát các giao tiếp telemetry, payload, tính toán và cảm biến.</span></p>
+          <p><span class="lang-en">The interface mix supports real-time vehicle control, sensor expansion, cloud connectivity and companion-style data exchange without external carrier boards.</span><span class="lang-vi">Hệ giao tiếp này hỗ trợ điều khiển phương tiện thời gian thực, mở rộng cảm biến, kết nối đám mây và trao đổi dữ liệu kiểu companion mà không cần carrier board ngoài.</span></p>
         </div>
         <div class="section-body">
-          <div class="triple-grid">
-            <div class="card"><h3>CAN</h3><ul class="list"><li><span class="lang-en">2x CAN buses with SN65HVD230</span><span class="lang-vi">2 bus CAN với SN65HVD230</span></li><li>120 ohm termination</li><li><span class="lang-en">TVS bus protection</span><span class="lang-vi">Bảo vệ TVS trên bus</span></li></ul></div>
-            <div class="card"><h3>UART</h3><ul class="list"><li><span class="lang-en">GPS1, GPS2, TELEM1, TELEM2, TELEM3 and debug UART roles</span><span class="lang-vi">Các cổng UART cho GPS1, GPS2, TELEM1, TELEM2, TELEM3 và debug</span></li><li><span class="lang-en">CM5 internal UART links to FMU</span><span class="lang-vi">Liên kết UART nội bộ giữa CM5 và FMU</span></li></ul></div>
-            <div class="card"><h3>I2C / SPI / ETH</h3><ul class="list"><li><span class="lang-en">I2C1, I2C2 and I2C3 buses</span><span class="lang-vi">Bus I2C1, I2C2 và I2C3</span></li><li>SPI6 external bus</li><li><span class="lang-en">100 Mbps FMU Ethernet and Gigabit CM5 Ethernet</span><span class="lang-vi">Ethernet 100 Mbps của FMU và Gigabit Ethernet của CM5</span></li></ul></div>
+          <div class="grid-3">
+            <div class="card"><h3>CAN</h3><ul class="list"><li><span class="lang-en">2x CAN buses for robust vehicle networking</span><span class="lang-vi">2 bus CAN cho mạng điều khiển phương tiện ổn định</span></li><li>120 ohm termination</li><li><span class="lang-en">Protected for field integration and peripheral expansion</span><span class="lang-vi">Có bảo vệ để tích hợp thực địa và mở rộng ngoại vi</span></li></ul></div>
+            <div class="card alt"><h3>UART</h3><ul class="list"><li><span class="lang-en">GPS1, GPS2, TELEM1, TELEM2, TELEM3 and debug roles</span><span class="lang-vi">Vai trò UART cho GPS1, GPS2, TELEM1, TELEM2, TELEM3 và debug</span></li><li><span class="lang-en">CM5 internal UART links to FMU</span><span class="lang-vi">Liên kết UART nội bộ giữa CM5 và FMU</span></li></ul></div>
+            <div class="card cool"><h3>I2C / SPI / ETH</h3><ul class="list"><li><span class="lang-en">I2C1, I2C2 and I2C3 buses</span><span class="lang-vi">Bus I2C1, I2C2 và I2C3</span></li><li>SPI6 external bus</li><li><span class="lang-en">100 Mbps FMU Ethernet and Gigabit CM5 Ethernet</span><span class="lang-vi">Ethernet 100 Mbps của FMU và Gigabit Ethernet của CM5</span></li></ul></div>
           </div>
         </div>
       </section>
-
       <section class="section" id="connectors">
         <div class="section-head">
           <h2><span class="lang-en">Peripheral Connectors</span><span class="lang-vi">Cổng kết nối ngoại vi</span></h2>
-          <p><span class="lang-en">Field connectors relevant for integration and wiring planning.</span><span class="lang-vi">Các cổng kết nối chính cần thiết cho tích hợp và lắp dây.</span></p>
+          <p><span class="lang-en">Connectors most relevant for harnessing, payload integration and service access.</span><span class="lang-vi">Các đầu nối quan trọng nhất cho đi dây, tích hợp payload và truy cập dịch vụ.</span></p>
         </div>
         <div class="section-body">
           <div class="table-wrap">
             <table class="matrix">
-              <thead><tr><th><span class="lang-en">Connector</span><span class="lang-vi">Cổng</span></th><th><span class="lang-en">Reference</span><span class="lang-vi">Ký hiệu</span></th><th><span class="lang-en">Pins</span><span class="lang-vi">Chân</span></th><th><span class="lang-en">Primary function</span><span class="lang-vi">Chức năng chính</span></th></tr></thead>
+              <thead><tr><th><span class="lang-en">Connector</span><span class="lang-vi">Cổng</span></th><th><span class="lang-en">Reference</span><span class="lang-vi">Ký hiệu</span></th><th><span class="lang-en">Pins</span><span class="lang-vi">Chân</span></th><th><span class="lang-en">Primary Function</span><span class="lang-vi">Chức năng chính</span></th></tr></thead>
               <tbody>
-                <tr><td>GPS1</td><td>J10</td><td>10</td><td><span class="lang-en">UART1, I2C1, GPIO, 5V peripheral</span><span class="lang-vi">UART1, I2C1, GPIO, 5V peripheral</span></td></tr>
-                <tr><td>GPS2</td><td>J15</td><td>6</td><td><span class="lang-en">UART8, I2C2, 5V high-power</span><span class="lang-vi">UART8, I2C2, 5V high-power</span></td></tr>
-                <tr><td>TELEM1</td><td>J9</td><td>6</td><td><span class="lang-en">UART7 with RTS/CTS</span><span class="lang-vi">UART7 có RTS/CTS</span></td></tr>
-                <tr><td>TELEM2</td><td>J11</td><td>6</td><td><span class="lang-en">UART5 with RTS/CTS</span><span class="lang-vi">UART5 có RTS/CTS</span></td></tr>
+                <tr><td>GPS1</td><td>J10</td><td>10</td><td>UART1, I2C1, GPIO, VDD_5V_PERIPH</td></tr>
+                <tr><td>GPS2</td><td>J15</td><td>6</td><td>UART8, I2C2, VDD_5V_HIPOWER</td></tr>
+                <tr><td>TELEM1</td><td>J9</td><td>6</td><td>UART7 with RTS/CTS</td></tr>
+                <tr><td>TELEM2</td><td>J11</td><td>6</td><td>UART5 with RTS/CTS</td></tr>
                 <tr><td>CAN1 / CAN2</td><td>J5 / J8</td><td>4</td><td><span class="lang-en">DroneCAN peripherals</span><span class="lang-vi">Ngoại vi DroneCAN</span></td></tr>
+                <tr><td>SPI External</td><td>J7</td><td>11</td><td>SPI6 + power + sync signals</td></tr>
                 <tr><td>USB-C</td><td>J3</td><td>USB-C</td><td><span class="lang-en">USB data and power sense</span><span class="lang-vi">Dữ liệu USB và nhận diện nguồn</span></td></tr>
                 <tr><td>CM5 HDMI</td><td>J32</td><td>-</td><td><span class="lang-en">Full HDMI output</span><span class="lang-vi">Ngõ ra HDMI đầy đủ</span></td></tr>
                 <tr><td>CM5 ETH0 / ETH1</td><td>P2 / P3</td><td>8</td><td><span class="lang-en">External Gigabit Ethernet</span><span class="lang-vi">Gigabit Ethernet bên ngoài</span></td></tr>
@@ -300,101 +373,74 @@ USB 5V/4A ------------------------------------/
           </div>
         </div>
       </section>
-
-      <section class="section" id="bom">
-        <div class="section-head">
-          <h2><span class="lang-en">Key Components</span><span class="lang-vi">Linh kiện chính</span></h2>
-          <p><span class="lang-en">Major ICs and their main roles in the hardware.</span><span class="lang-vi">Các IC chính và vai trò chức năng trong phần cứng.</span></p>
-        </div>
-        <div class="section-body">
-          <div class="table-wrap">
-            <table class="matrix">
-              <thead><tr><th><span class="lang-en">Reference</span><span class="lang-vi">Ký hiệu</span></th><th><span class="lang-en">Component</span><span class="lang-vi">Linh kiện</span></th><th><span class="lang-en">Function</span><span class="lang-vi">Chức năng</span></th></tr></thead>
-              <tbody>
-                <tr><td>U1</td><td>LTC4417CUF</td><td><span class="lang-en">Triple-input priority selector</span><span class="lang-vi">Chọn nguồn ưu tiên 3 đầu vào</span></td></tr>
-                <tr><td>U3 / U4</td><td>BQ24315DSGR</td><td><span class="lang-en">Overvoltage and overcurrent protection</span><span class="lang-vi">Bảo vệ quá áp và quá dòng</span></td></tr>
-                <tr><td>U7</td><td>STM32F103C8T7</td><td><span class="lang-en">IO coprocessor</span><span class="lang-vi">Đồng xử lý IO</span></td></tr>
-                <tr><td>U14</td><td>LAN8742A-CZ-TR</td><td><span class="lang-en">10/100 Ethernet PHY</span><span class="lang-vi">PHY Ethernet 10/100</span></td></tr>
-                <tr><td>U27</td><td>MAX20077ATCA</td><td><span class="lang-en">3.8V modem buck converter</span><span class="lang-vi">Buck 3.8V cho modem</span></td></tr>
-                <tr><td>B1</td><td>TPS62821DLCR</td><td><span class="lang-en">FMU 3.3V buck regulator</span><span class="lang-vi">Nguồn buck 3.3V cho FMU</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="software">
         <div class="section-head">
           <h2><span class="lang-en">Software Compatibility</span><span class="lang-vi">Tương thích phần mềm</span></h2>
-          <p><span class="lang-en">Supported flight stacks, Linux tools and communication protocols.</span><span class="lang-vi">Các firmware bay, công cụ Linux và giao thức được hỗ trợ.</span></p>
+          <p><span class="lang-en">The software story is a major selling point because the board keeps standard flight stacks while opening access to mainstream Linux robotics tooling.</span><span class="lang-vi">Câu chuyện phần mềm là một điểm bán quan trọng vì board vẫn giữ các flight stack chuẩn, đồng thời mở ra khả năng dùng bộ công cụ robotics Linux phổ biến.</span></p>
         </div>
         <div class="section-body">
-          <div class="dual-grid">
-            <div class="card"><h3><span class="lang-en">Flight software</span><span class="lang-vi">Phần mềm bay</span></h3><ul class="list"><li>PX4 Autopilot v1.14+</li><li>ArduPilot 4.4+</li><li>QGroundControl</li><li>Mission Planner</li></ul></div>
-            <div class="card"><h3><span class="lang-en">CM5 software stack</span><span class="lang-vi">Hệ phần mềm CM5</span></h3><ul class="list"><li>Ubuntu 22.04 LTS</li><li>Raspberry Pi OS</li><li>ROS 2 Humble / Iron</li><li>TensorFlow Lite, PyTorch Mobile, OpenCV, MAVSDK, GStreamer</li></ul></div>
+          <div class="grid-2">
+            <div class="card"><h3><span class="lang-en">Flight Software</span><span class="lang-vi">Phần mềm bay</span></h3><ul class="list"><li>PX4 Autopilot v1.14+</li><li>ArduPilot 4.4+</li><li>QGroundControl</li><li>Mission Planner</li></ul></div>
+            <div class="card cool"><h3><span class="lang-en">CM5 Software Stack</span><span class="lang-vi">Ngăn xếp phần mềm CM5</span></h3><ul class="list"><li>Ubuntu 22.04 LTS</li><li>Raspberry Pi OS</li><li>ROS 2 Humble / Iron</li><li>TensorFlow Lite, PyTorch Mobile, OpenCV, MAVSDK, GStreamer</li></ul></div>
           </div>
           <div style="height:16px"></div>
-          <div class="card"><h3><span class="lang-en">Supported protocols</span><span class="lang-vi">Giao thức hỗ trợ</span></h3><div class="chip-row"><span class="chip">MAVLink 2.0</span><span class="chip">DroneCAN</span><span class="chip">RTK / GNSS</span><span class="chip">SBUS / PPM / DSM</span><span class="chip">I2C</span><span class="chip">SPI</span><span class="chip">Ethernet</span><span class="chip">USB</span></div></div>
+          <div class="card alt"><h3><span class="lang-en">Supported Protocols</span><span class="lang-vi">Giao thức hỗ trợ</span></h3><div class="chip-row"><span class="chip">MAVLink 2.0</span><span class="chip">DroneCAN</span><span class="chip">RTK / GNSS</span><span class="chip">SBUS / PPM / DSM</span><span class="chip">I2C</span><span class="chip">SPI</span><span class="chip">Ethernet</span><span class="chip">USB</span></div></div>
         </div>
       </section>
-
       <section class="section" id="applications">
         <div class="section-head">
           <h2><span class="lang-en">Target Applications</span><span class="lang-vi">Ứng dụng mục tiêu</span></h2>
-          <p><span class="lang-en">Use cases where the integrated control-plus-compute architecture is valuable.</span><span class="lang-vi">Các kịch bản ứng dụng phù hợp với kiến trúc điều khiển và tính toán tích hợp.</span></p>
+          <p><span class="lang-en">The board makes the most sense where onboard perception and network-connected operation are as important as flight stabilization itself.</span><span class="lang-vi">Board này phù hợp nhất ở những nơi mà perception onboard và vận hành có kết nối quan trọng ngang với bản thân việc ổn định bay.</span></p>
         </div>
         <div class="section-body">
-          <div class="quad-grid">
+          <div class="grid-4">
             <div class="card"><h3>UAV</h3><p><span class="lang-en">Mapping, inspection, delivery and BVLOS systems.</span><span class="lang-vi">Drone mapping, inspection, giao hàng và BVLOS.</span></p></div>
-            <div class="card"><h3>UGV</h3><p><span class="lang-en">Agricultural, warehouse and patrol robots.</span><span class="lang-vi">Robot nông nghiệp, kho vận và tuần tra.</span></p></div>
-            <div class="card"><h3>Marine</h3><p><span class="lang-en">ASV and USV platforms needing autonomy and cloud connectivity.</span><span class="lang-vi">Nền tảng ASV, USV cần tự hành và kết nối đám mây.</span></p></div>
-            <div class="card"><h3>Edge AI</h3><p><span class="lang-en">Object detection, obstacle avoidance and live video analytics.</span><span class="lang-vi">Nhận dạng đối tượng, tránh vật cản và phân tích video trên edge.</span></p></div>
+            <div class="card alt"><h3>UGV</h3><p><span class="lang-en">Agricultural, logistics and patrol robots.</span><span class="lang-vi">Robot nông nghiệp, logistics và tuần tra.</span></p></div>
+            <div class="card cool"><h3>Marine</h3><p><span class="lang-en">ASV and USV platforms needing autonomy plus cloud connectivity.</span><span class="lang-vi">Nền tảng ASV, USV cần tự hành cộng kết nối đám mây.</span></p></div>
+            <div class="card"><h3>Edge AI</h3><p><span class="lang-en">Object detection, obstacle avoidance, VIO pipelines and live analytics.</span><span class="lang-vi">Nhận dạng đối tượng, tránh vật cản, VIO và phân tích trực tiếp.</span></p></div>
           </div>
         </div>
       </section>
-
-      <section class="section" id="messaging">
-        <div class="section-head">
-          <h2><span class="lang-en">Product Positioning</span><span class="lang-vi">Định vị sản phẩm</span></h2>
-          <p><span class="lang-en">Short messaging for technical and business-facing documentation.</span><span class="lang-vi">Thông điệp ngắn gọn cho tài liệu kỹ thuật và giới thiệu sản phẩm.</span></p>
-        </div>
-        <div class="section-body">
-          <div class="dual-grid">
-            <div class="card"><h3><span class="lang-en">Core value proposition</span><span class="lang-vi">Giá trị cốt lõi</span></h3><p><span class="lang-en">One board combines autopilot, Linux edge compute and wide-area connectivity, reducing harness complexity and companion-computer overhead.</span><span class="lang-vi">Một bo mạch duy nhất kết hợp autopilot, tính toán Linux edge và kết nối diện rộng, từ đó giảm độ phức tạp dây nối và giảm nhu cầu companion computer riêng.</span></p></div>
-            <div class="card"><h3><span class="lang-en">Suggested taglines</span><span class="lang-vi">Tagline đề xuất</span></h3><ul class="list"><li><span class="lang-en">From autopilot to edge AI. One board.</span><span class="lang-vi">Từ autopilot đến edge AI. Trên một bo mạch.</span></li><li><span class="lang-en">The flight controller that thinks, sees and stays connected.</span><span class="lang-vi">Bộ điều khiển bay có thể nghĩ, nhìn và luôn kết nối.</span></li><li><span class="lang-en">PX4. ArduPilot. AI. 5G. All in one.</span><span class="lang-vi">PX4. ArduPilot. AI. 5G. Tất cả trong một.</span></li></ul></div>
-          </div>
-        </div>
-      </section>
-
       <section class="section faq" id="faq">
         <div class="section-head">
           <h2>FAQ</h2>
-          <p><span class="lang-en">Common technical questions when evaluating the design.</span><span class="lang-vi">Các câu hỏi kỹ thuật thường gặp khi đánh giá thiết kế.</span></p>
+          <p><span class="lang-en">Short answers to common evaluation questions.</span><span class="lang-vi">Câu trả lời ngắn cho các câu hỏi đánh giá thường gặp.</span></p>
         </div>
         <div class="section-body">
-          <details><summary><span class="lang-en">Is this a replacement for a standard Pixhawk 6X?</span><span class="lang-vi">Đây có phải là bộ thay thế trực tiếp cho Pixhawk 6X thông thường không?</span></summary><p><span class="lang-en">It targets Pixhawk 6X compatibility, but expands the platform with CM5 compute, modem support and broader networking. It is better described as a Pixhawk-class controller with integrated companion-compute capability.</span><span class="lang-vi">Sản phẩm hướng tới tương thích Pixhawk 6X, nhưng mở rộng hệ thống bằng CM5, modem và khả năng kết nối rộng hơn. Chính xác hơn, đây là flight controller chuẩn Pixhawk có tích hợp companion compute.</span></p></details>
-          <details><summary><span class="lang-en">Why integrate CM5 directly on the board?</span><span class="lang-vi">Vì sao tích hợp CM5 trực tiếp lên board?</span></summary><p><span class="lang-en">Direct integration removes extra cabling and separate power distribution, while improving latency and deployment cleanliness.</span><span class="lang-vi">Tích hợp trực tiếp giúp loại bỏ dây nối và cấp nguồn riêng, đồng thời giảm độ trễ và làm hệ thống gọn hơn.</span></p></details>
-          <details><summary><span class="lang-en">Which missions benefit most from 4G/5G?</span><span class="lang-vi">Loại nhiệm vụ nào hưởng lợi nhiều nhất từ 4G/5G?</span></summary><p><span class="lang-en">BVLOS, fleet telemetry, cloud-connected robotics and live video streaming are the strongest use cases.</span><span class="lang-vi">BVLOS, telemetry đội xe, robot kết nối đám mây và truyền video trực tiếp là các trường hợp hưởng lợi rõ nhất.</span></p></details>
-          <details><summary><span class="lang-en">Can this platform be used beyond drones?</span><span class="lang-vi">Nền tảng này có dùng được ngoài drone không?</span></summary><p><span class="lang-en">Yes. It also suits UGV, ASV, USV and other autonomous systems needing real-time control plus Linux compute.</span><span class="lang-vi">Có. Sản phẩm cũng phù hợp với UGV, ASV, USV và các hệ tự hành cần điều khiển thời gian thực kết hợp tính toán Linux.</span></p></details>
+          <details><summary><span class="lang-en">Is this just a Pixhawk 6X with a Raspberry Pi added on?</span><span class="lang-vi">Đây chỉ là Pixhawk 6X gắn thêm Raspberry Pi phải không?</span></summary><p><span class="lang-en">No. The board is better described as a compute-native flight controller platform. The CM5, modem path, internal Ethernet, UART coupling and redundant power tree are all designed into the base architecture.</span><span class="lang-vi">Không. Mô tả đúng hơn là một compute-native flight controller platform. CM5, đường modem, Ethernet nội bộ, các liên kết UART và cây nguồn dự phòng đều được thiết kế sẵn trong kiến trúc gốc.</span></p></details>
+          <details><summary><span class="lang-en">What is the main difference versus a normal Pixhawk plus companion computer stack?</span><span class="lang-vi">Khác biệt chính so với cấu hình Pixhawk cộng companion computer thông thường là gì?</span></summary><p><span class="lang-en">Cleaner integration, fewer power domains to wire externally, better deployment packaging, tighter internal data links and a more product-like system boundary.</span><span class="lang-vi">Tích hợp gọn hơn, ít miền nguồn phải đi dây ngoài hơn, đóng gói triển khai tốt hơn, liên kết dữ liệu nội bộ chặt hơn và ranh giới hệ thống mang tính sản phẩm hoàn chỉnh hơn.</span></p></details>
+          <details><summary><span class="lang-en">Why is 4G/5G important here?</span><span class="lang-vi">Vì sao 4G/5G lại quan trọng ở đây?</span></summary><p><span class="lang-en">Because AI at the edge becomes much more valuable when the platform also supports fleet telemetry, remote diagnostics, OTA workflows and live media links.</span><span class="lang-vi">Vì AI trên edge sẽ có giá trị cao hơn nhiều khi nền tảng đồng thời hỗ trợ telemetry đội xe, chẩn đoán từ xa, OTA và đường truyền media trực tiếp.</span></p></details>
+          <details><summary><span class="lang-en">Which users should this wiki target?</span><span class="lang-vi">Wiki này nên hướng tới nhóm người dùng nào?</span></summary><p><span class="lang-en">Primarily system integrators, robotics engineers, UAV product teams and researchers evaluating a deployable compute-plus-control platform.</span><span class="lang-vi">Chủ yếu là system integrator, kỹ sư robotics, đội phát triển sản phẩm UAV và nhà nghiên cứu đang đánh giá một nền tảng compute cộng điều khiển sẵn sàng triển khai.</span></p></details>
         </div>
       </section>
-
       <div class="footer"><span class="lang-en">Edge Computing Flight Controller Pixhawk 6X Wiki · Bilingual EN/VI · 2026</span><span class="lang-vi">Wiki Edge Computing Flight Controller Pixhawk 6X · Song ngữ EN/VI · 2026</span></div>
     </div>
   </main>
 </div>
 <script>
-const sections=[...document.querySelectorAll('main .section, .hero')];
-const links=[...document.querySelectorAll('.nav-list a')];
-const map=new Map(links.map(link=>[link.getAttribute('href').slice(1),link]));
-const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(!entry.isIntersecting)return;links.forEach((link)=>link.classList.remove('active'));const active=map.get(entry.target.id);if(active)active.classList.add('active');});},{rootMargin:'-20% 0px -65% 0px',threshold:.1});
-sections.forEach((section)=>observer.observe(section));
-const buttons=[...document.querySelectorAll('[data-lang-choice]')];
-const applyLanguage=(lang)=>{document.body.setAttribute('data-lang',lang);document.documentElement.setAttribute('lang',lang==='vi'?'vi':'en');buttons.forEach((btn)=>btn.classList.toggle('active',btn.dataset.langChoice===lang));try{localStorage.setItem('wiki-lang',lang);}catch(error){}}
-buttons.forEach((btn)=>btn.addEventListener('click',()=>applyLanguage(btn.dataset.langChoice)));
-let initial='en';
-try{initial=localStorage.getItem('wiki-lang')||'en';}catch(error){}
-if(initial!=='vi')initial='en';
+const sections = [...document.querySelectorAll('main .section, .hero')];
+const links = [...document.querySelectorAll('.nav-list a')];
+const map = new Map(links.map((link) => [link.getAttribute('href').slice(1), link]));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    links.forEach((link) => link.classList.remove('active'));
+    const active = map.get(entry.target.id);
+    if (active) active.classList.add('active');
+  });
+}, { rootMargin: '-20% 0px -65% 0px', threshold: 0.1 });
+sections.forEach((section) => observer.observe(section));
+const buttons = [...document.querySelectorAll('[data-lang-choice]')];
+const applyLanguage = (lang) => {
+  document.body.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'vi' ? 'vi' : 'en');
+  buttons.forEach((btn) => btn.classList.toggle('active', btn.dataset.langChoice === lang));
+  try { localStorage.setItem('wiki-lang', lang); } catch (error) {}
+};
+buttons.forEach((btn) => btn.addEventListener('click', () => applyLanguage(btn.dataset.langChoice)));
+let initial = 'en';
+try { initial = localStorage.getItem('wiki-lang') || 'en'; } catch (error) {}
+if (initial !== 'vi') initial = 'en';
 applyLanguage(initial);
 </script>
 </body>
