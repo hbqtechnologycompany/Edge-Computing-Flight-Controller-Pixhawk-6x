@@ -34,6 +34,9 @@
 
 The **Edge Computing Flight Controller Pixhawk 6X** is a next-generation, open-standard autopilot board that combines the proven **FMUv6 (Pixhawk 6X)** flight controller architecture with a **Raspberry Pi Compute Module 5 (CM5)** edge computing platform and an integrated **4G/5G modem**, all on a single unified baseboard.
 
+![Edge Computing Flight Controller FMU6x](/images/Edge%20Computing%20Flight%20Controller%20FMU6x.jpg)
+
+
 This product bridges the gap between traditional embedded autopilots and the demands of modern autonomous systems — enabling **real-time AI inference, video streaming, cloud telemetry, and over-the-air mission updates** without additional companion computers or external modems.
 
 | Parameter | Value |
