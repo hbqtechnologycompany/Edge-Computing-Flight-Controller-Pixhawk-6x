@@ -4,6 +4,8 @@
 
 This document focuses on **how to integrate the board into a vehicle**, **how to bring up the flight stack**, and **how to build applications on the CM5**. It is not a component-level datasheet.
 
+**Technical Wiki (EN/VI):** [https://wiki.hbqsolution.com/HBQ_EC_FC.html](https://wiki.hbqsolution.com/HBQ_EC_FC.html)
+
 ![Product](images/FC_HBQ.jpg)
 
 ---
@@ -298,7 +300,7 @@ The platform fits best when **flight control + onboard perception + network serv
 | Architecture / block diagram | [`images/Edge Computing Flight Controller FMU6x.jpg`](images/Edge%20Computing%20Flight%20Controller%20FMU6x.jpg) |
 | Baseboard block diagram | [`images/FC_computer_baseBoard_Block_diagram.jpg`](images/FC_computer_baseBoard_Block_diagram.jpg) |
 | Product photos / renders | [`images/`](images/) |
-| Technical wiki (EN/VI) | [HBQ Product Wiki — Edge Computing Flight Controller](https://wiki.hbqsolution.com/) *(or your published `HBQ_EC_FC.html`)* |
+| Technical wiki (EN/VI) | [https://wiki.hbqsolution.com/HBQ_EC_FC.html](https://wiki.hbqsolution.com/HBQ_EC_FC.html) |
 | PX4 docs | https://docs.px4.io |
 | ArduPilot docs | https://ardupilot.org |
 | MAVSDK | https://mavsdk.mavlink.io |
